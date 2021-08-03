@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  node:
+      container_name: "nodejs"
+      image: "node:lts"
+      ports:
+        - "3000:3000"
+      tty: true
+      volumes:
+          - ./:/usr/src/app
+      working_dir: /usr/src/app
