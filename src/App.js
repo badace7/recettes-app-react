@@ -9,6 +9,7 @@ import Card from './components/Card'
 
 import withFirebase from './hoc/withFirebase'
 
+import  ColorContext  from './components/Color'
 
 const App = ({
   match,
@@ -22,6 +23,7 @@ const App = ({
       .map(key => <Card key={key} details={recettes[key]}></Card>)
 
   return (
+      <ColorContext>
         <div className='box'>
           <Header pseudo={match.params.pseudo} />
           { cards }
@@ -34,6 +36,7 @@ const App = ({
             chargerExemple={chargerExemple}
           ></Admin>
         </div>
+      </ColorContext>
       )
   }
 
